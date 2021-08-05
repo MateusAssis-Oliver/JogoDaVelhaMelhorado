@@ -1,10 +1,10 @@
 
-class player{
+class Newplayer{
 
     constructor(icon){  this.icon = icon;}
 };
 
-class jogo{
+class TicTacToe{
 
     /* checar vencedore */
     checksWinner(){};
@@ -13,25 +13,45 @@ class jogo{
     reversePlay(){};
 
     /* add icone jogador */
-    addIcon(){}
+    addIcon(addIcomid,player){
+
+        let imgPlayer = document.createElement('img');
+        imgPlayer.src = ('ok')
+        document.getElementById(addIcomid).appendChild(imgPlayer);
+        console.log(imgPlayer)
+
+        let jogador = player;
+        console.log(`${addIcomid} -  ${player}`);
+        alert(` PALYER : ${player}  CASA_CLICADA : ${addIcomid}`);
+    };
+
     /* novo jogo */
     newGame(){
 
-        let newPlayer_1 = new player('1'),
-            newPlayer_2 = new player('2');
-
+            /* Criação dos jogadores */
+        let newPlayer_1 = new Newplayer('1'),
+            newPlayer_2 = new Newplayer('2'),
+            icons = new TicTacToe(),
+            blocoClicado,
+            player,
+            controleVezPlayr = 0;
 
         document.getElementById('jogo').addEventListener('click',function(elento){
-            console.log(elento.target.id)
 
+                blocoClicado = elento.target.id;
+
+                controleVezPlayr % 2 === 0 ? player = newPlayer_1 : player = newPlayer_2;
+                controleVezPlayr++;
+
+            icons.addIcon(blocoClicado,player.icon);
+            
         });
-        alert( 'Começou o jogo');
 
-        
+         alert( 'Começou o jogo'); 
 
     };
 };
 
-let New_jogo = new jogo();
+let New_jogo = new TicTacToe();
 
 document.getElementById('play').addEventListener('click',function(){ New_jogo.newGame() });
