@@ -1,7 +1,7 @@
 #jogo{
     width: 603px;
     height:600px;
-    border:solid 1px
+    border:solid 0.5px
 }
  
 .linha{
@@ -24,4 +24,7 @@
     width: 60px;
     border-radius: 20px;
 }
-
+.icons{
+  max-width: 100%;
+  height: auto;
+}
