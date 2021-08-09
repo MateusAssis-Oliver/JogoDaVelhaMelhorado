@@ -7,21 +7,60 @@ class Newplayer{
 class TicTacToe{
 
     /* checar vencedore */
-    checksWinner(){};
+    checksWinner(){
+         let allCasas = document.querySelectorAll('.casa');
+
+        console.log(allCasas);
+
+        /* modos de verificação */
+
+        /* 
+        
+        COMPARAÇÃO GULOSA
+        A = {1,4,7}     E = {4,5,6}
+        B = {2,5,8}     F = {7,8,9}
+        C = {3,6,9}     G = {3,5,7}
+        D = {1,2,3}     H = {1,5,9}
+
+        COMPARAÇÃO APATIR DO MEIO
+
+               1   2   3
+                \  |  /    
+            4 - [  5  ] - 6
+                /  |  \ 
+               7   8   9
+                                      
+                                   
+        DEPOIS USANDO AS LATERAIS 1 E 9 PARA COMPARALÃI EM L
+        
+                 _________   
+                /1   2   3 
+                 4   5   6
+                 7   8   9 
+                 ________/
+        */
+
+    };
 
     /* reverter jogada */
     reversePlay(){};
 
     /* add icone jogador */
     addIcon(addIcomid,player){
+let imgPlayer = document.createElement('img'),
+            casaClik = document.getElementById(addIcomid),
+            jogador = player;
 
-        let imgPlayer = document.createElement('img');
-        imgPlayer.src = ('ok')
-        document.getElementById(addIcomid).appendChild(imgPlayer);
-        console.log(imgPlayer)
+        imgPlayer.src = (`../IMGS/${jogador}.png`);
+        imgPlayer.className = 'icons';
+        imgPlayer.id = `${jogador}`
 
-        let jogador = player;
-        console.log(`${addIcomid} -  ${player}`);
+        casaClik.appendChild(imgPlayer);
+        
+        this.checksWinner();
+        console.log(imgPlayer);
+        
+        console.log(`${addIcomid} <->  ${jogador}`);
         alert(` PALYER : ${player}  CASA_CLICADA : ${addIcomid}`);
     };
 
