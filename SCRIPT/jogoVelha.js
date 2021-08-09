@@ -8,15 +8,28 @@ class TicTacToe{
 
     /* checar vencedore */
     checksWinner(){
-         let allCasas = document.querySelectorAll('.casa');
 
-        console.log(allCasas);
+        /* MEIO CASA 5 */
+         let allCasas = document.querySelectorAll('.casa'),
+         imgCasas = [],
+         blocoMeio =allCasas[ ( ( allCasas.length - 1 ) / 2 ) ].tagName;
+
+        for(let index_i = 0; index_i < allCasas.length; index_i++){
+        
+    
+            imgCasas[index_i] = allCasas[index_i].querySelector('img');
+
+        
+        }
+
+        console.log(imgCasas[0])
+
 
         /* modos de verificação */
 
         /* 
         
-        COMPARAÇÃO GULOSA
+        COMPARAÇÃO GULOSA[varrer casa por casa e vericar um cojunto de tres casas para fazer a comparação]
         A = {1,4,7}     E = {4,5,6}
         B = {2,5,8}     F = {7,8,9}
         C = {3,6,9}     G = {3,5,7}
