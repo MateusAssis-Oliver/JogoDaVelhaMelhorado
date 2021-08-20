@@ -13,15 +13,15 @@ class TicTacToe {
             blocoMeio = allCasas[(allCasas.length - 1) / 2].tagName;
 
         /* loop para pegar as imgs dentro das casas */
-        allCasas.forEach((nome, indice) => { imgCasas[indice] = allCasas[indice].firstElementChild; });
+        allCasas.forEach((nome, indice) => {
+            imgCasas[indice] = allCasas[indice].firstElementChild;
+        });
         console.log(imgCasas);
 
         /* VERIFICAÇÃO DE VENCEDOR */
-        imgCasas.forEach((nome,indice)=>{
-            
+        imgCasas.forEach((nome, indice) => {
+            /* ... */
         });
-
-
     }
 
     /* reverter jogada */
@@ -29,7 +29,6 @@ class TicTacToe {
 
     /* add icone jogador */
     addIcon(addIcomid, player) {
-
         let imgPlayer = document.createElement("img"),
             casaClik = document.getElementById(addIcomid),
             jogador = player;
@@ -49,7 +48,6 @@ class TicTacToe {
 
     /* novo jogo */
     newGame() {
-
         /* Criação dos jogadores */
         let newPlayer_1 = new Newplayer("1"),
             newPlayer_2 = new Newplayer("2"),
