@@ -19,8 +19,8 @@ class TicTacToe {
         console.log(imgCasas);
 
         /* VERIFICAÇÃO DE VENCEDOR */
-        imgCasas.forEach((nome, indice) => {
-            /* ... */
+        imgCasas.forEach((nome, indice,) => {
+        
         });
     }
 
